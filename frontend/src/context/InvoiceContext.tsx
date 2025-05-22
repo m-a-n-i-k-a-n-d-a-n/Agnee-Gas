@@ -176,7 +176,7 @@ export const InvoiceProvider: React.FC<{ children: React.ReactNode }> = ({ child
       try {
         setIsLoading(true);
         // Try to fetch from API first
-        const response = await fetch(`${API_URL}/invoices`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/invoices`);
         if (response.ok) {
           const data = await response.json();
           setInvoices(data);
@@ -213,7 +213,7 @@ export const InvoiceProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setIsLoading(true);
       
       // Try to save to API first
-      const response = await fetch(`${API_URL}/invoices`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/invoices`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -257,7 +257,7 @@ export const InvoiceProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setIsLoading(true);
       
       // Try to update via API first
-      const response = await fetch(`${API_URL}/invoices/${updatedInvoice.id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/invoices/${updatedInvoice.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -301,7 +301,7 @@ export const InvoiceProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setIsLoading(true);
       
       // Try to delete via API first
-      const response = await fetch(`${API_URL}/invoices/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/invoices/${id}`, {
         method: 'DELETE',
       });
       
