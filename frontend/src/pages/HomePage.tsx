@@ -56,13 +56,20 @@ const HomePage: React.FC = () => {
       {/* Hero Banner */}
       <div className="bg-primary text-primary-foreground py-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Agnee Gas Distributor Billing Software</h1>
-          <p className="text-xl mb-8">Create invoices, manage customers, and grow your business easily and professionally.</p>
-          <Button size="lg" className="px-8 py-6 text-lg">
-            Get Started
-          </Button>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Agnee Gas Distributor Billing Software
+          </h1>
+          <p className="text-xl mb-8">
+            Create invoices, manage customers, and grow your business easily and professionally.
+          </p>
+          <Link to="/create-invoice">
+            <Button size="lg" className="px-8 py-6 text-lg bg-[lavender] text-black hover:bg-[#e6e6fa]">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
+
 
       {/* Features Section - THIS IS THE NEW SECTION */}
       <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
@@ -152,7 +159,7 @@ const HomePage: React.FC = () => {
               </CardContent>
               <CardFooter>
                 <Link to="/invoice-history" className="w-full">
-                  <Button className="w-full" variant="outline" size="lg">
+                  <Button className="w-full" size="lg">
                     <History className="mr-2 h-4 w-4" /> View Invoices
                   </Button>
                 </Link>
@@ -176,7 +183,7 @@ const HomePage: React.FC = () => {
               </CardContent>
               <CardFooter>
                 <Link to="/update" className="w-full">
-                  <Button className="w-full" variant="secondary" size="lg">
+                  <Button className="w-full" size="lg">
                     <Settings className="mr-2 h-4 w-4" /> Update Details
                   </Button>
                 </Link>
