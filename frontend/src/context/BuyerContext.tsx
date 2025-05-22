@@ -29,7 +29,7 @@ export const BuyerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       try {
         setIsLoading(true);
         // Try to fetch from API first
-        const response = await fetch(`${API_URL}/buyers`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/buyers`);
         if (response.ok) {
           const data = await response.json();
           setBuyers(data);
@@ -69,7 +69,7 @@ export const BuyerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setIsLoading(true);
       
       // Try to save to API first
-      const response = await fetch(`${API_URL}/buyers`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/buyers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ export const BuyerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setIsLoading(true);
       
       // Try to update via API first
-      const response = await fetch(`${API_URL}/buyers/${updatedBuyer.gstin}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/buyers/${updatedBuyer.gstin}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ export const BuyerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setIsLoading(true);
       
       // Try to delete via API first
-      const response = await fetch(`${API_URL}/buyers/${gstin}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/buyers/${gstin}`, {
         method: 'DELETE',
       });
       
