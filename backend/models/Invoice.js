@@ -14,7 +14,7 @@ const InvoiceItemSchema = new mongoose.Schema({
 });
 
 const InvoiceSchema = new mongoose.Schema({
-  id: { type: String, required: true, unique: true },
+  id: { type: String, required: true, unique: false },
   irn: String,
   ackNo: String,
   ackDate: String,
