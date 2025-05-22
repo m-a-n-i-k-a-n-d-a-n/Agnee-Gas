@@ -35,7 +35,7 @@ export const CylinderProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       try {
         setIsLoading(true);
         // Try to fetch from API first
-        const response = await fetch(`${API_URL}/cylinders`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cylinders`);
         if (response.ok) {
           const data = await response.json();
           setCylinders(data);
@@ -85,7 +85,7 @@ export const CylinderProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       setIsLoading(true);
       console.log('🚀 Adding cylinder to API:', cylinder);
   
-      const response = await fetch(`${API_URL}/cylinders`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cylinders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ export const CylinderProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       setIsLoading(true);
       
       // Try to update via API first
-      const response = await fetch(`${API_URL}/cylinders/${updatedCylinder.id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cylinders/${updatedCylinder.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -172,7 +172,7 @@ export const CylinderProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       setIsLoading(true);
       
       // Try to delete via API first
-      const response = await fetch(`${API_URL}/cylinders/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cylinders/${id}`, {
         method: 'DELETE',
       });
       
